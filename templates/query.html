@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Enter the ip address of the server you want to query</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.query.label }}<br>
+            {{ form.query(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

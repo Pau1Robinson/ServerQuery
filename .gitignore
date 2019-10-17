@@ -1,3 +1,6 @@
 .env
+.flaskenv
+Pipfile
+Pipfile.lock
 .pytest_cache
 __pycache__
