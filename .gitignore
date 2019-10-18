@@ -1,5 +1,6 @@
 .env
 .flaskenv
+config.py
 Pipfile
 Pipfile.lock
 .pytest_cache
