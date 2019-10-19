@@ -1,13 +1,12 @@
-{% extends "index.html" %}
-
-{% block content %}
-    <h1>Enter the ip address of the server you want to query</h1>
-    <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.query.label }}<br>
-            {{ form.query(size=32) }}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
-{% endblock %}
+<html>
+    <head>
+        <title>{{ query.server_info.server_ip }}</title>
+    </head>
+    <body>
+        <h1>{{ query.server_info.server_name }}</h1>
+        <p>Player Count:{{query.server_info.player_count}}/{{query.server_info.max_players}}</p>
+        <p>Map: {{query.server_info.server_map}}</p>
+        <p>Game: {{query.server_info.server_game}}</p>
+        <p>Server Type: {{query.server_info.server_type}}</p>
+    </body>
+</html>
