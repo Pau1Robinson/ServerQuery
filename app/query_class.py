@@ -126,7 +126,8 @@ class SteamQuery():
 
     def fill_player_steam_info(self, player):
         '''
-        Uses the requests module to query the steam api
+        Uses the requests module to query the steam api using the players steam id to get the players avatar_url and profile_Visibility
+        then add set that to the values of the player dictionary in json_data.
         '''
         self.rate_limit()
         player_request = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key='
@@ -163,7 +164,9 @@ class SteamQuery():
 
     def search_player_name(self, name, browser):
         '''
-        fix me
+        Takes the player name and searches it in the steam search page retivies that with selenium.
+        Then looks for the matching player names and urls with beautiful soup.
+        if there is a single match adds the steam url to the value in the player dictionary in data_json.
         '''
         self.rate_limit()
         player = name
@@ -219,7 +222,8 @@ class SteamQuery():
 
     def get_steam_id(self, player):
         '''
-        fix me
+        Check if the players steam id is in their steam url if not tries to retrieve it from the steam api
+        then add it to the value in the player dictionary in json_data.
         '''
         self.rate_limit()
         url = self.json_data['player_info'][player]['profile_url']
